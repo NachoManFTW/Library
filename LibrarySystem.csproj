@@ -36,9 +36,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="book.cs" />
-    <Compile Include="FileManipulation.cs" />
-    <Compile Include="main.cs" />
+    <Compile Include="src\book.cs" />
+    <Compile Include="src\fileManipulation.cs" />
+    <Compile Include="src\library.cs" />
+    <Compile Include="src\Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="tests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

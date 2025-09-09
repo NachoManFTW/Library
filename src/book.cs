@@ -10,27 +10,29 @@ namespace LibrarySystem
     //short description, ISBN number, overall rating, cost in USD, and a total number of pages
     struct Book
     {
-        string title;
-        string author;
-        string genre;
-        string description;
 
-        string ISBN;
-        string rating;
-        double cost;
-        int numberOfPages;
+        public string title;
+        public string author;
+        public string genre;
+        public string description;
 
-        Book(string TITLE, string AUTHOR, string GENRE, string DESCRIPTION, string ISBN_NUMBER, string RATING, double COST, int NUMBER_OF_PAGES)
+        public string isbn;
+        public string rating;
+        public decimal cost;
+        public uint   numberOfPages;
+
+        public Book(string TITLE, string AUTHOR, string GENRE, string DESCRIPTION, string ISBN_NUMBER, string RATING, decimal COST, uint NUMBER_OF_PAGES)
         {
-            title =         TITLE;
-            author =        AUTHOR;
-            genre =         GENRE;
-            description =   DESCRIPTION;
-            ISBN =          ISBN_NUMBER;
-            rating =        RATING;
-            cost =          COST;
-            numberOfPages = NUMBER_OF_PAGES;
+            this.title =         TITLE;
+            this.author =        AUTHOR;
+            this.genre =         GENRE;
+            this.description =   DESCRIPTION;
+            this.isbn =          ISBN_NUMBER;
+            this.rating =        RATING;
+            this.cost =          COST;
+            this.numberOfPages = NUMBER_OF_PAGES;
 
         }
+
     }
 }
