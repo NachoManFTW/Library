@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace LibrarySystem.src
 {
-    struct Library
+    public struct Library
     {
         //Library Name
         string LibraryName { get; set; }
         
         //List of all books in the library
-        List<Book> ListOfBooks { get; set; }
+        public List<Book> ListOfBooks { get; set; }
 
 
 
@@ -34,19 +34,6 @@ namespace LibrarySystem.src
             this.ListOfBooks.Add(book);
         }
 
-        public void PrintBookList()
-        {
-            foreach (Book book in this.ListOfBooks)
-            {
-                Console.WriteLine($"\n\nTitle:          {book.title}");
-                Console.WriteLine($"Author:             {book.author}");
-                Console.WriteLine($"Genre:              {book.genre}");
-                Console.WriteLine($"Short Description:  {book.description}");
-                Console.WriteLine($"ISBN Number:        {book.isbn}");
-                Console.WriteLine($"Rating:             {book.rating}");
-                Console.WriteLine($"Cost:               {book.cost}");
-                Console.WriteLine($"Number of Pages:    {book.numberOfPages}");
-            }
-        }
+
     }
 }

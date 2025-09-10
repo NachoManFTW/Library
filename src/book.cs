@@ -8,7 +8,7 @@ namespace LibrarySystem
 {
     //Struct for each book added, each book has a title, author, genre,
     //short description, ISBN number, overall rating, cost in USD, and a total number of pages
-    struct Book
+    public struct Book
     {
 
         public string title;
@@ -31,7 +31,6 @@ namespace LibrarySystem
             this.rating =        RATING;
             this.cost =          COST;
             this.numberOfPages = NUMBER_OF_PAGES;
-
         }
 
     }
