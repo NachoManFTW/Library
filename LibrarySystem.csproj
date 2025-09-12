@@ -36,10 +36,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\book.cs" />
+    <Compile Include="src\objects\book.cs" />
+    <Compile Include="src\utils\entry.cs" />
     <Compile Include="src\utils\libraryMenuOptions.cs" />
     <Compile Include="src\fileManipulation.cs" />
-    <Compile Include="src\library.cs" />
+    <Compile Include="src\objects\library.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="src\utils\prompts.cs" />
     <Compile Include="src\utils\searches.cs" />

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibrarySystem.src;
+
 
 namespace LibrarySystem.utils
 {
@@ -10,11 +12,12 @@ namespace LibrarySystem.utils
     {
         
         //Inital prompt at start of program runtime
-        public static void InitialPrompt(string libraryName)
+        public static void InitialPrompt(ref Library library)
         {
-            Console.WriteLine($"Welcome to the {libraryName} library!");
+            Console.Clear();
+            Console.WriteLine($"Editing {library.LibraryName}");
             Console.WriteLine("\n\nPlease select one of the corresponding numbers");
-            Console.WriteLine("1. View all the books \n2. Edit a book \n3. Add a book \n4. Remove a book \n5. Exit");
+            Console.WriteLine("1. View all the books \n2. Edit a book \n3. Add a book \n4. Remove a book \n5. Create new library \n6. Edit new library \n7. Exit");
 
             return;
         }
@@ -22,6 +25,7 @@ namespace LibrarySystem.utils
         //Get user input for which command they would like to execute
         public static string InitialUserInput(ref string userInput)
         {
+            string[] userOptions = {"1", "2", "3", "4", "5", "6", "7" };
             //Loop until one of the options are selected
             do
             {
@@ -29,7 +33,7 @@ namespace LibrarySystem.utils
                 userInput = Console.ReadLine();
 
                 //If one of the options is selected, break from loop, otherwise prompt user to enter a number between 1 and 5
-                if (userInput == "1" || userInput == "2" || userInput == "3" || userInput == "4" || userInput == "5")
+                if (userOptions.Contains(userInput))
                     break;
                 else
                     Console.WriteLine("ERROR: Select 1-5");

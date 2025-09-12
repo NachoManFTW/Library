@@ -13,49 +13,32 @@ namespace LibrarySystem
     class Program
     {
         //Program main entry point
-        static void Main(string[] args)
+        static void Main()
         {
-            //Get user option for which command they want to do 
+            //Create list of to hold all libraries in 
+            List<Library> listOfLibraries = new List<Library>();
+
+            //Create a new library object
+            Library library = new Library();
+
+            //Main user input string
             string userInput = "";
+
+            //Main Program Loop
             do
             {
+                //Create initial library to begin
+                if (!listOfLibraries.Any())
+                    library = LibraryMenuOptions.CreateNewLibrary(ref listOfLibraries);
 
-                //Set name of library
-                Console.WriteLine("Enter a Name For Your Library");
-                Console.Write("Name: ");
-                string libraryName = Console.ReadLine();
-
-                //Declare create a library
-                Library library = new Library(libraryName);
-
-
-                Console.Clear();
-                
-
-                Prompts.InitialPrompt(libraryName);
+                Prompts.InitialPrompt(ref library);
                 Prompts.InitialUserInput(ref userInput);
+                LibraryMenuOptions.Menu(userInput, ref library, ref listOfLibraries);
+            } while (userInput != "7");
 
-
-                LibraryMenuOptions.Menu(userInput, ref library);
-            } while (userInput != "5");
-
-            //Clear screen and prompt user with exiting statement
-            Console.Clear();
-            Console.WriteLine("Thanks for editing your library, see ya soon!");
-            Console.WriteLine("EXITING...");
-            //Sleep so it seems like it shutting down 
-            System.Threading.Thread.Sleep(2000);
+            LibraryMenuOptions.ExitFunction();
 
             return;
         }
-
-
-
-
-
-
-   
     }
-
-
 }
